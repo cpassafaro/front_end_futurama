@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { CircularProgress } from "@material-ui/core/";
 import { Route, Link, Redirect } from "react-router-dom";
+import CreateCharacters from './CreateCharacter';
 import Header from './stories/Header';
 import './App.css';
 
@@ -47,7 +48,9 @@ class App extends Component{
     if(this.state.isLoading == true){
       return(<CircularProgress/>)
     }else{
-    return(<div></div>
+    return(<div>
+     <CreateCharacters data={this.state.characters}/>
+    </div>
 
     )}
   }
@@ -55,5 +58,3 @@ class App extends Component{
 
 export default App;
 
-//Hi group!! 
-// Hi Lina this is Jeremiah 

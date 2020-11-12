@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { CircularProgress } from "@material-ui/core/";
 import { Route, Link, Redirect } from "react-router-dom";
-import Header from './Header/Header';
+import Header from './stories/Header';
 import './App.css';
 
 class App extends Component{

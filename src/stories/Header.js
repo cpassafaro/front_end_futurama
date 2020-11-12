@@ -8,7 +8,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className="wrapper">
       <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        {/* <svg width="32" height="32" viewBox="0 0 32 32" xmlns="../../public/Futurama_Planet_Express.svg">
           <g fill="none" fillRule="evenodd">
             <path
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
@@ -22,30 +22,24 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
               d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
               fill="#91BAF8"
             />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+          </g> */}
+        {/* </svg> */}
       </div>
       <div>
-        {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
-          </>
-        )}
+        
+          <Button className = "button" size="small" onClick={onLogout} label="Add a Character" />
+        
       </div>
     </div>
   </header>
 );
 
-Header.propTypes = {
-  user: PropTypes.shape({}),
-  onLogin: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired,
-};
+// Header.propTypes = {
+//   user: PropTypes.shape({}),
+//   onLogin: PropTypes.func.isRequired,
+//   onLogout: PropTypes.func.isRequired,
+//   onCreateAccount: PropTypes.func.isRequired,
+// };
 
 Header.defaultProps = {
   user: null,

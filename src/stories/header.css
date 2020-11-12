@@ -1,26 +1,38 @@
 .wrapper {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #00D3D4;
+  height: 250px;
+  background-image: url("../Images/Futurama-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 svg {
   display: inline-block;
   vertical-align: top;
+  height: 75px;
+  width: 75px;
 }
 
 h1 {
   font-weight: 900;
-  font-size: 20px;
+  font-size: 75px;
   line-height: 1;
   margin: 6px 0 6px 10px;
   display: inline-block;
   vertical-align: top;
 }
 
-button + button {
+.button {
   margin-left: 10px;
+  margin-bottom: 150px;
+  border: 5px solid #00D3D4;
+  background-color: #00D3D4;
+  border-radius: 20px;
 }

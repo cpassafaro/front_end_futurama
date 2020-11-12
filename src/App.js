@@ -56,3 +56,4 @@ class App extends Component{
 export default App;
 
 //Hi group!! 
+// Hi Lina this is Jeremiah 

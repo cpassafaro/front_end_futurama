@@ -40,8 +40,8 @@ class App extends Component{
   }
 
   render(){
-    console.log(this.state.characters)
-    console.log(this.state.quotes)
+    // console.log(this.state.characters)
+    // console.log(this.state.quotes)
     //put if else statement here to see if components are still loading
     //use the one from front-end api project
     if(this.state.isLoading == true){

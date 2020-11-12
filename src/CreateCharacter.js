@@ -30,6 +30,8 @@ export default class CreateCharacter extends Component{
             status: this.state.status,
             profession: this.state.profession
         }
+
+        
     }
 
 

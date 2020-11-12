@@ -83,11 +83,6 @@ export default class CreateCharacter extends Component{
     }  
 
     render(){
-        console.log(this.state.name)
-        console.log(this.state.planet)
-        console.log(this.state.age)
-        console.log(this.state.image)
-        console.log(this.state.quote)
 
         return(<Container>
             <Typography style={{display:'flex', flexDirection:'column'}}>

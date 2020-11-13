@@ -25,68 +25,67 @@ export default function MediaCard(props) {
   // console.log(props.characters.data)
 
   return (
-   
+
     <div className="teo">
-    <div className="hi">{console.log(props.characters.data)}</div>
+      <div className="hi">{console.log(props.characters.data)}</div>
       {
 
-        props.length !== 0 
-        ?
+        props.length !== 0
+          ?
 
-        props.characters.data.map((card) => 
-          <div className= "hi"> 
-          <Grid item key={card._id} xs={12} sm={6} md={4}>
-          <Card>
+          props.characters.data.map((card) =>
+            <div className="hi">
+              <Grid item key={card._id} xs={12} sm={6} md={4}>
+                <Card>
 
-            <CardActionArea>
-              <CardMedia
-                // className={classes.media}
-                // image={card.picURL}
-                // title="Character"
+                  <CardActionArea>
+                    <CardMedia
+                    // className={classes.media}
 
-              />
+                    // title="Character"
 
-              <CardContent>
+                    />
+                    
+                    {card.picURL}
+                    <CardContent>
 
-                <Typography gutterBottom variant="h5" component="h2">
-                  {card.name}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {card.planet} <br />
-                  {card.age} <br />
-                  {card.picURL} <br />
-                  {card.status}
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {card.name}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        <p> Planet: {card.planet}</p>
+                        <p> Age: {card.age}</p>
+                        <p> Status:{card.status} </p>
 
+                      </Typography>
+                    </CardContent>
 
-          </Typography>
-              </CardContent>
+                  </CardActionArea>
 
-            </CardActionArea>
-
-            <CardActions>
-              <Button size="small" color="primary">
-                Edit Character
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Edit Character
         </Button>
-              <Button size="small" color="primary">
-                Delete Character
-        </Button>
-        
-              <Button size="small" color="primary">
-                Show Quote
+                    <Button size="small" color="primary">
+                      Delete Character
         </Button>
 
-        
-
-            </CardActions>
-
-
-          </Card>
-          </Grid>
-          </div>
+                    <Button size="small" color="primary">
+                      Show Quote
+        </Button>
 
 
-        )
-        :null
+
+                  </CardActions>
+
+
+                </Card>
+              </Grid>
+            </div>
+
+
+          )
+          : null
 
       }
 

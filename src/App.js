@@ -5,6 +5,7 @@ import { Route, Link, Redirect } from "react-router-dom";
 import CreateCharacters from './Components/CreateCharacter';
 import Header from './stories/Header';
 import './App.css';
+import MediaCard from "./stories/Card"
 
 class App extends Component{
   constructor(){
@@ -48,12 +49,28 @@ class App extends Component{
     if(this.state.isLoading == true){
       return(<CircularProgress/>)
     }else{
-    return(<div>
-    <Card />
-     <CreateCharacters data={this.state.characters}/>
 
+    return(
+    
+    <div>
+      <nav>
+        {/* <Link to="/create"></Link> */}
+      </nav>
+      <main>
+        <Header/>
+        <CreateCharacters data={this.state.characters}/>
+     </main>
 
-     <div> <Card /> </div>
+     <div> 
+
+     {
+       this.state.characters.length !==0 
+       ?
+       <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> 
+     : null 
+     }
+
+     </div>
 
 
 

@@ -22,6 +22,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+
   // console.log(props.characters.data)
 
   return (
@@ -52,10 +53,13 @@ export default function MediaCard(props) {
                   {card.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
+
+
                   {card.planet} <br />
                   {card.age} <br />
                   {card.picURL} <br />
                   {card.status}
+
 
 
           </Typography>

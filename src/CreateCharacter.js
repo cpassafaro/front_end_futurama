@@ -36,6 +36,9 @@ export default class CreateCharacter extends Component{
         axios.post('https://futurama-project.herokuapp.com/characters', character)
             .then((res) => {
                 console.log(res)
+                alert('success')
+                window.location.reload(false)
+
             })
     }
 

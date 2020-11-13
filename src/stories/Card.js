@@ -17,20 +17,29 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
+  console.log(props.characters.data)
 
   return (
     <Card className={classes.root}>
+  
       <CardActionArea>
+      {props.characters.data.map((card)=>{
+      
+
+
         <CardMedia
           className={classes.media}
           image={CharacterData.picURL}
           title="Character"
+          
         />
+        })}
         <CardContent>
+
           <Typography gutterBottom variant="h5" component="h2">
-            Character Name
+           
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Character Data of some sort
@@ -44,7 +53,10 @@ export default function MediaCard() {
         <Button size="small" color="primary">
           Delete Character
         </Button>
+      
       </CardActions>
+   
     </Card>
+    
   );
 }

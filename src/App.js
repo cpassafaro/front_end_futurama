@@ -49,6 +49,7 @@ class App extends Component{
       return(<CircularProgress/>)
     }else{
     return(<div>
+    <Card />
      <CreateCharacters data={this.state.characters}/>
 
 

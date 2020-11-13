@@ -14,12 +14,9 @@
     width: 100%;
   }
   .teo{
-     background-color: lightblue;
+     /* background-color: lightblue; */
      height: 100vh;
      width: 100%;
      display: grid;
-     
-     
-     ;
   }
 

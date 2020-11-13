@@ -40,9 +40,9 @@ export default function MediaCard(props) {
 
             <CardActionArea>
               <CardMedia
-                className={classes.media}
-                image={CharacterData.picURL}
-                title="Character"
+                // className={classes.media}
+                // image={card.picURL}
+                // title="Character"
 
               />
 
@@ -52,7 +52,12 @@ export default function MediaCard(props) {
                   {card.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Character Data of some sort
+                  {card.planet} <br />
+                  {card.age} <br />
+                  {card.picURL} <br />
+                  {card.status}
+
+
           </Typography>
               </CardContent>
 
@@ -65,6 +70,12 @@ export default function MediaCard(props) {
               <Button size="small" color="primary">
                 Delete Character
         </Button>
+        
+              <Button size="small" color="primary">
+                Show Quote
+        </Button>
+
+        
 
             </CardActions>
 

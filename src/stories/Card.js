@@ -26,6 +26,7 @@ export default function MediaCard(props) {
   
       <CardActionArea>
       {props.characters.data.map((card)=>{
+      
 
 
         <CardMedia

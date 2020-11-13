@@ -7,6 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
+import './card.css'
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +22,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+<<<<<<< HEAD
   let charData = props.characters.data
   console.log(charData)
 
@@ -43,20 +47,68 @@ export default function MediaCard(props) {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Character Data of some sort
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Edit Character
-        </Button>
-        <Button size="small" color="primary">
-          Delete Character
-        </Button>
-      
-      </CardActions>
+=======
+  // console.log(props.characters.data)
+
+  return (
    
-    </Card>
-    
+    <div className="teo">
+    <div className="hi">{console.log(props.characters.data)}</div>
+      {
+
+        props.length !== 0 
+        ?
+
+        props.characters.data.map((card) => 
+          <div className= "hi"> 
+          <Grid item key={card._id} xs={12} sm={6} md={4}>
+          <Card>
+
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={CharacterData.picURL}
+                title="Character"
+
+              />
+
+              <CardContent>
+
+                <Typography gutterBottom variant="h5" component="h2">
+                  {card.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Character Data of some sort
+>>>>>>> f02fa98dac98c814307bd345f64e86a7eb2e5be5
+          </Typography>
+              </CardContent>
+
+            </CardActionArea>
+
+            <CardActions>
+              <Button size="small" color="primary">
+                Edit Character
+        </Button>
+              <Button size="small" color="primary">
+                Delete Character
+        </Button>
+
+            </CardActions>
+
+
+          </Card>
+          </Grid>
+          </div>
+
+
+        )
+        :null
+
+      }
+
+    </div>
+
+
+
   );
 }

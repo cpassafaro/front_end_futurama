@@ -36,14 +36,21 @@ export default class CreateCharacter extends Component {
       .then((res) => {
         console.log(res);
         alert("success");
-        // this.props.history.push('./Status/success')
-        window.location.reload(false)
+
+        this.setState({
+          name: '',
+          age: '',
+          planet: '',
+          image: '',
+          species: '',
+          status: '',
+          profession: '',
+        })
       })
   }
 
   pushCharacterNameToState = (e) => {
     let element = e.target.value;
-    console.log(element);
     this.setState({ name: element });
   };
 
@@ -74,7 +81,7 @@ export default class CreateCharacter extends Component {
 
   pushStatusToState = (e) => {
     let element = e.target.value;
-    this.setState({ species: element });
+    this.setState({ status: element });
   };
 
   pushProfessionToState = (e) => {
@@ -87,42 +94,50 @@ export default class CreateCharacter extends Component {
       <Container>
         <Typography style={{ display: "flex", flexDirection: "column" }}>
           <TextField
+          //value has to be set so that when we clear the state these are updated
+            value={this.state.name}
             className='input'
             type="text"
             placeholder="Character Name"
             onChange={this.pushCharacterNameToState}
           />
           <TextField
+            value={this.state.planet}
             className='input'
             type="text"
             placeholder="Planet Name"
             onChange={this.pushPlanetNameToState}
           />
           <TextField
+            value={this.state.age}
             className='input'
             type="text"
             placeholder="Character Age"
             onChange={this.pushAgeToState}
           />
           <TextField
+            value={this.state.image}
             className='input'
             type="text"
             placeholder="Upload Character Image"
             onChange={this.pushImageToState}
           />
           <TextField
+            value={this.state.species}
             className='input'
             type="text"
             placeholder="Character Species"
             onChange={this.pushSpeciesToState}
           />
           <TextField
+            value={this.state.status}
             className='input'
             type="text"
             placeholder="Character Status"
             onChange={this.pushStatusToState}
           />
           <TextField
+            value={this.state.profession}
             className='input'
             type="text"
             placeholder="Character Profession"

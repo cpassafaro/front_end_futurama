@@ -49,6 +49,7 @@ class App extends Component{
     if(this.state.isLoading == true){
       return(<CircularProgress/>)
     }else{
+
     return(
     
     <div>
@@ -70,6 +71,7 @@ class App extends Component{
      }
 
      </div>
+
 
 
 

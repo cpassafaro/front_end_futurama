@@ -50,7 +50,9 @@ class App extends Component{
       return(<CircularProgress/>)
     }else{
     return(
+    
     <div>
+    
      <CreateCharacters data={this.state.characters}/>
 
 

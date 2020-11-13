@@ -19,13 +19,13 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  console.log(props.characters.data)
+  let charData = props.characters.data
+  console.log(charData)
 
   return (
     <Card className={classes.root}>
-  
+
       <CardActionArea>
-      {props.characters.data.map((card)=>{
       
 
 
@@ -35,7 +35,7 @@ export default function MediaCard(props) {
           title="Character"
           
         />
-        })}
+       
         <CardContent>
 
           <Typography gutterBottom variant="h5" component="h2">

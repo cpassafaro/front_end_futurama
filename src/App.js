@@ -53,7 +53,10 @@ class App extends Component{
      <CreateCharacters data={this.state.characters}/>
 
 
-     <div> <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> </div>
+     <div> 
+       <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> 
+       
+     </div>
 
 
 

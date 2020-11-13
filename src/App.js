@@ -55,18 +55,13 @@ class App extends Component{
 
 
      <div> 
-<<<<<<< HEAD
-       <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> 
-       
-     </div>
-=======
+
      {
        this.state.characters.length !==0 
        ?
        <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> 
      : null 
      }
->>>>>>> f02fa98dac98c814307bd345f64e86a7eb2e5be5
 
      </div>
 

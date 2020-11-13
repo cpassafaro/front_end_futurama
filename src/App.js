@@ -49,16 +49,16 @@ class App extends Component{
     if(this.state.isLoading == true){
       return(<CircularProgress/>)
     }else{
+
     return(
     
     <div>
       <nav>
-        <Link to="/create"></Link>
+        {/* <Link to="/create"></Link> */}
       </nav>
       <main>
         <Header/>
-        <Route path='/create' component={CreateCharacters}/>
-
+        <CreateCharacters data={this.state.characters}/>
      </main>
 
      <div> 
@@ -71,6 +71,7 @@ class App extends Component{
      }
 
      </div>
+
 
 
 

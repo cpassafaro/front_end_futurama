@@ -25,6 +25,7 @@ export default function MediaCard(props) {
   // console.log(props.characters.data)
 
   return (
+
     <div className="teo">
       <div className="hi">{console.log(props.characters.data)}</div>
       <Grid
@@ -58,11 +59,13 @@ export default function MediaCard(props) {
                         Character Data of some sort
                       </Typography>
                     </CardContent>
+
                   </CardActionArea>
 
                   <CardActions>
                     <Button size="small" color="primary">
                       Edit Character
+
                     </Button>
                     <Button size="small" color="primary">
                       Delete Character
@@ -73,6 +76,7 @@ export default function MediaCard(props) {
             ))
           : null}
       </Grid>
+
     </div>
   );
 }

@@ -22,32 +22,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-<<<<<<< HEAD
-  let charData = props.characters.data
-  console.log(charData)
 
-  return (
-    <Card className={classes.root}>
-
-      <CardActionArea>
-      
-
-
-        <CardMedia
-          className={classes.media}
-          image={CharacterData.picURL}
-          title="Character"
-          
-        />
-       
-        <CardContent>
-
-          <Typography gutterBottom variant="h5" component="h2">
-           
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Character Data of some sort
-=======
   // console.log(props.characters.data)
 
   return (
@@ -66,9 +41,9 @@ export default function MediaCard(props) {
 
             <CardActionArea>
               <CardMedia
-                className={classes.media}
-                image={CharacterData.picURL}
-                title="Character"
+                // className={classes.media}
+                // image={card.picURL}
+                // title="Character"
 
               />
 
@@ -78,8 +53,15 @@ export default function MediaCard(props) {
                   {card.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Character Data of some sort
->>>>>>> f02fa98dac98c814307bd345f64e86a7eb2e5be5
+
+
+                  {card.planet} <br />
+                  {card.age} <br />
+                  {card.picURL} <br />
+                  {card.status}
+
+
+
           </Typography>
               </CardContent>
 
@@ -92,6 +74,12 @@ export default function MediaCard(props) {
               <Button size="small" color="primary">
                 Delete Character
         </Button>
+        
+              <Button size="small" color="primary">
+                Show Quote
+        </Button>
+
+        
 
             </CardActions>
 

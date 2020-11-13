@@ -55,6 +55,7 @@ class App extends Component{
 
 
      <div> 
+
      {
        this.state.characters.length !==0 
        ?

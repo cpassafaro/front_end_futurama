@@ -5,6 +5,7 @@ import { Route, Link, Redirect } from "react-router-dom";
 import CreateCharacters from './Components/CreateCharacter';
 import Header from './stories/Header';
 import './App.css';
+import MediaCard from "./stories/Card"
 
 class App extends Component{
   constructor(){
@@ -52,7 +53,7 @@ class App extends Component{
      <CreateCharacters data={this.state.characters}/>
 
 
-     <div> <Card /> </div>
+     <div> <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> </div>
 
 
 

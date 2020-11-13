@@ -49,14 +49,16 @@ export default function MediaCard(props) {
 
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="h2">
-                        {card.name}
+                       <h3> {card.name}</h3>
                       </Typography>
                       <Typography
                         variant="body2"
                         color="textSecondary"
                         component="p"
                       >
-                        Character Data of some sort
+                        <p> Planet: {card.planet} </p> 
+                        <p> Age:{card.age} </p>
+                        <p> Status: {card.status}</p>
                       </Typography>
                     </CardContent>
 
@@ -69,6 +71,9 @@ export default function MediaCard(props) {
                     </Button>
                     <Button size="small" color="primary">
                       Delete Character
+                    </Button>
+                    <Button size="small" color="primary">
+                      Show Quote
                     </Button>
                   </CardActions>
                 </Card>

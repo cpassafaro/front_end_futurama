@@ -17,7 +17,7 @@ export default function SimpleAlerts() {
   return (
     <div className={classes.root}>
       <Alert variant="filled" severity="success">
-        Success! Click Recipes to continue
+        Success!
       </Alert>
     </div>
   );

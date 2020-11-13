@@ -49,12 +49,20 @@ class App extends Component{
     if(this.state.isLoading == true){
       return(<CircularProgress/>)
     }else{
-    return(<div>
+    return(
+    <div>
      <CreateCharacters data={this.state.characters}/>
 
 
-     <div> <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> </div>
+     <div> 
+     {
+       this.state.characters.length !==0 
+       ?
+       <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> 
+     : null 
+     }
 
+     </div>
 
 
 

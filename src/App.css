@@ -1,12 +1,5 @@
-body {
-  background-color: #00D3D4;
-  display: flex;
-}
 .App {
   text-align: center;
-  justify-content: space-between;
-  
-  
 }
 
 
@@ -26,7 +19,7 @@ body {
 }
 
 .App-link {
-  background-color: #282c34;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {

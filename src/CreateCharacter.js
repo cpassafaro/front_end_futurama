@@ -37,8 +37,7 @@ export default class CreateCharacter extends Component{
             .then((res) => {
                 console.log(res)
                 alert('success')
-                window.location.reload(false)
-
+                // window.location.reload(false)
             })
     }
 
@@ -89,17 +88,17 @@ export default class CreateCharacter extends Component{
 
         return(<Container>
             <Typography style={{display:'flex', flexDirection:'column'}}>
-                <TextField type='text'placeholder='Character Name' onChange={this.pushCharacterNameToState}/>
-                <TextField type='text'placeholder='Planet Name' onChange={this.pushPlanetNameToState}/>
-                <TextField type='text'placeholder='Character Age' onChange={this.pushAgeToState}/>
-                <TextField type='text'placeholder='Upload Character Image' onChange={this.pushImageToState}/>
-                <TextField type='text'placeholder='Character Species' onChange={this.pushSpeciesToState}/>
-                <TextField type='text'placeholder='Character Status' onChange={this.pushStatusToState}/>
-                <TextField type='text'placeholder='Character Profession' onChange={this.pushProfessionToState}/>
+                <TextField type='reset'placeholder='Character Name' onChange={this.pushCharacterNameToState}/>
+                <TextField type='reset'placeholder='Planet Name' onChange={this.pushPlanetNameToState}/>
+                <TextField type='reset'placeholder='Character Age' onChange={this.pushAgeToState}/>
+                <TextField type='reset'placeholder='Upload Character Image' onChange={this.pushImageToState}/>
+                <TextField type='reset'placeholder='Character Species' onChange={this.pushSpeciesToState}/>
+                <TextField type='reset'placeholder='Character Status' onChange={this.pushStatusToState}/>
+                <TextField type='reset'placeholder='Character Profession' onChange={this.pushProfessionToState}/>
                 <Button variant='outlined' onClick={this.postInput}>Submit</Button>
             </Typography>
         </Container>)
     }
 
 }
-//comment
+

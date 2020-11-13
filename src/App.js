@@ -53,12 +53,11 @@ class App extends Component{
     
     <div>
       <nav>
-        <Link to="/create"></Link>
+        {/* <Link to="/create"></Link> */}
       </nav>
       <main>
         <Header/>
-        <Route path='/create' component={CreateCharacters}/>
-
+        <CreateCharacters data={this.state.characters}/>
      </main>
 
      <div> 

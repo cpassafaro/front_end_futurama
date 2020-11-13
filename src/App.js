@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { CircularProgress } from "@material-ui/core/";
+import { Card, CircularProgress } from "@material-ui/core/";
 import { Route, Link, Redirect } from "react-router-dom";
-import CreateCharacters from './CreateCharacter';
+import CreateCharacters from './Components/CreateCharacter';
 import Header from './stories/Header';
 import './App.css';
 
@@ -50,7 +50,18 @@ class App extends Component{
     }else{
     return(<div>
      <CreateCharacters data={this.state.characters}/>
+
+
+     <div> <Card /> </div>
+
+
+
+
+
+
+
     </div>
+    
 
     )}
   }

@@ -1,16 +1,50 @@
-import React from 'react'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-    return (
-      <button
-        type="button"
-        className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-        style={backgroundColor && { backgroundColor }}
-        {...props}
-      >
-        {label}
-      </button>
-    );
-  };
-  
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
+
+export default function MediaCard() {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image={CharacterData.picURL}
+          title="Character"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Character Name
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Character Data of some sort
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Edit Character
+        </Button>
+        <Button size="small" color="primary">
+          Delete Character
+        </Button>
+      </CardActions>
+    </Card>
+  );
+}

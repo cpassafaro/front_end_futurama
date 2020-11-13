@@ -28,6 +28,8 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
       <div>
         
           <Button className = "button" size="small" onClick={onLogout} label="Add a Character" />
+          <Button className = "button" size="small" onClick={onLogout} label="Go Home" />
+
         
       </div>
     </div>
@@ -44,3 +46,5 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 Header.defaultProps = {
   user: null,
 };
+
+export default Header

@@ -51,8 +51,14 @@ class App extends Component{
     }else{
     return(
     <div>
-     <CreateCharacters data={this.state.characters}/>
+      <nav>
+        <Link to="/create"></Link>
+      </nav>
+      <main>
+        <Header/>
+        <Route path='/create' component={CreateCharacters}/>
 
+     </main>
 
      <div> 
 

@@ -47,8 +47,7 @@ export default function MediaCard(props) {
 
   function deleteButton(name) {
     console.log(name)
-    // let element = e.target
-    // console.log(element)
+    // alert(`Are you sure you want to delete ${name}`)
         axios.delete(`https://futurama-project.herokuapp.com/characters/delete/${name}`)
             .then((res) => {
                 console.log(res)

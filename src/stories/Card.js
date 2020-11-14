@@ -26,15 +26,15 @@ export default function MediaCard(props) {
   const classes = useStyles();
   // console.log(props.characters.data)
 
-  const [newAge, setNewAge] = useState("");
+  const [newPlanet, setNewPlanet] = useState("");
 
-  function handleEdit(age) {
-    console.log(newAge);
-    fetch("https://futurama-project.herokuapp.com/characters/" + age, {
+  function handleEdit(planet) {
+    console.log(newPlanet);
+    fetch("https://futurama-project.herokuapp.com/characters/" + planet, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        status: newAge,
+        status: newPlanet,
       }),
     })
       .then((res) => res.text())
@@ -42,7 +42,7 @@ export default function MediaCard(props) {
   }
 
   function handleChange(e) {
-    setNewAge(e.target.value);
+    setNewPlanet(e.target.value);
   }
 
   function deleteButton(name) {
@@ -94,13 +94,13 @@ export default function MediaCard(props) {
                   </CardActionArea>
 
                   <CardActions>
-                    <TextField placeholder={card.age} onChange={handleChange} />
+                    <TextField placeholder={card.planet} onChange={handleChange} />
                     <Button
-                      onClick={() => handleEdit(card.age)}
+                      onClick={() => handleEdit(card.planet)}
                       size="small"
                       color="primary"
                     >
-                      Edit Age
+                      Edit Planet
                     </Button>
                     <Button size="small" color="primary" onClick={() => deleteButton(card.name)}>
                       Delete Character

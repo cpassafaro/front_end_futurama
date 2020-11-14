@@ -89,6 +89,14 @@ export default class CreateCharacter extends Component {
     this.setState({ profession: element });
   };
 
+  checkInput = (e) => {
+    if(this.state.name == ""){
+      alert('Please give your Character a name')
+    }else{
+      this.postInput(e)
+    }
+  }
+
   render() {
     return (
       <Container>
@@ -143,7 +151,7 @@ export default class CreateCharacter extends Component {
             placeholder="Character Profession"
             onChange={this.pushProfessionToState}
           />
-          <Button variant="outlined" onClick={this.postInput}>
+          <Button variant="outlined" onClick={this.checkInput}>
             Submit
           </Button>
         </Typography>

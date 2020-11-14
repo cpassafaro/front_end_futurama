@@ -68,11 +68,11 @@ function handleChange(e){
         {props.length !== 0
           ? props.characters.data.map((card) => (
               <div className="hi">
-                <Card>
+                <Card>{console.log(card.picUrl)}
                   <CardActionArea>
                     <CardMedia
                       className={classes.media}
-                      image={CharacterData.picURL}
+                      image={card.picUrl}
                       title="Character"
                     />
 

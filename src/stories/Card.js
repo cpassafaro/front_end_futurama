@@ -28,9 +28,9 @@ export default function MediaCard(props) {
 
   const [newPlanet, setNewPlanet] = useState("");
 
-  function handleEdit(planet) {
+  function handleEdit(planetText) {
     console.log(newPlanet);
-    fetch("https://futurama-project.herokuapp.com/characters/" + planet, {
+    fetch("https://futurama-project.herokuapp.com/characters/planet/" + planetText, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

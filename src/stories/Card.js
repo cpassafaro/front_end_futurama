@@ -28,18 +28,20 @@ export default function MediaCard(props) {
 
   const [newPlanet, setNewPlanet] = useState("");
 
-  function handleEdit(planetText) {
+  function handleEdit(nameText) {
     console.log(newPlanet);
-    fetch("https://futurama-project.herokuapp.com/characters/planet/" + planetText, {
+    fetch("https://futurama-project.herokuapp.com/characters/planet/" + nameText, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        status: newPlanet,
+        planet: newPlanet,
       }),
     })
       .then((res) => res.text())
       .then((res) => console.log(res));
+      
   }
+
 
   function handleChange(e) {
     setNewPlanet(e.target.value);
@@ -95,7 +97,7 @@ export default function MediaCard(props) {
                   <CardActions>
                     <TextField placeholder={card.planet} onChange={handleChange} />
                     <Button
-                      onClick={() => handleEdit(card.planet)}
+                      onClick={() => handleEdit(card.name)}
                       size="small"
                       color="primary"
                     >

@@ -56,11 +56,11 @@ export default function MediaCard(props) {
             })
   }
 
-    function getQuotes(props) {
-      let quoteList=[]
-      quoteList.push(props.quotes.data)
-//      console.log(quoteList)
-    }
+//     function getQuotes(props) {
+//       let quoteList=[]
+//       quoteList.push(props.quotes.data)
+// //      console.log(quoteList)
+//     }
     
     
   return (
@@ -116,6 +116,7 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary">
                       Show Quote
                     </Button>
+                    <div className="quote">{card.quote}</div>
                   </CardActions>
                 </Card>
               </div>

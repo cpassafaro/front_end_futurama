@@ -18,8 +18,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 340,
-    backgroundSize: "contain",
+    height: 140,
   },
 });
 
@@ -39,10 +38,7 @@ export default function MediaCard(props) {
       }),
     })
       .then((res) => res.text())
-      .then((res) => {
-        console.log(res)
-        props.rerenderParentCallback()
-      });
+      .then((res) => console.log(res));
       
   }
 
@@ -63,14 +59,8 @@ export default function MediaCard(props) {
     function getQuotes(props) {
       let quoteList=[]
       quoteList.push(props.quotes.data)
-      console.log(quoteList)
-      quoteList.map((item) => {
-        if(item.character === "Bender") {
-        console.log('success')
-//        console.log(quote)
-      })
+//      console.log(quoteList)
     }
-  }
     
     
   return (
@@ -123,16 +113,10 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card.name)}>
                       Delete Character
                     </Button>
-
-                    <Button size="small" color="primary" onClick={getQuotes(props)}>
-
-
+                    <Button size="small" color="primary">
                       Show Quote
                     </Button>
                   </CardActions>
-                  <div>
-                  <p>{console.log(card)}</p>
-                  </div>
                 </Card>
               </div>
             ))

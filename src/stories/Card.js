@@ -56,6 +56,14 @@ export default function MediaCard(props) {
             })
   }
 
+    function getQuotes(props) {
+      let quoteList=[]
+      quoteList.push(props.quotes.data)
+      const quote = quoteList.filter(props.quotes.data.name);
+      console.log(quoteList)
+    }
+    
+    
   return (
     <div className="teo">
       <div className="hi">{console.log(props.characters.data)}</div>

@@ -38,7 +38,10 @@ export default function MediaCard(props) {
       }),
     })
       .then((res) => res.text())
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res)
+        props.rerenderParentCallback()
+      });
       
   }
 

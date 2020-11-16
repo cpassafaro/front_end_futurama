@@ -10,6 +10,7 @@ import MediaCard from "./stories/Card"
 class App extends Component{
   constructor(){
     super()
+    this.rerenderParentCallback = this.rerenderParentCallback.bind(this)
 
     this.state = {
       characters:"",
@@ -18,6 +19,7 @@ class App extends Component{
     }
   }
   componentDidMount(){
+
     //do api call in here and then change from isloading to false.
     console.log('mounted')
     let url = "https://futurama-project.herokuapp.com/characters";
@@ -40,6 +42,27 @@ class App extends Component{
       })
 
   }
+rerenderParentCallback(){
+  console.log('updateState')
+    let url = "https://futurama-project.herokuapp.com/characters";
+    let urlQuotes = "https://futurama-project.herokuapp.com/quotes";
+
+    axios.get(url)
+      .then((res) => {
+        return res
+      })
+      .then((future) => {
+        this.setState({characters: future})
+      })
+
+    axios.get(urlQuotes)
+      .then((res) => {
+        return res
+      })
+      .then((quotesData) => {
+        this.setState({quotes: quotesData, isLoading:false})
+      })
+}
 
   render(){
     console.log(this.state.characters)
@@ -66,7 +89,7 @@ class App extends Component{
      {
        this.state.characters.length !==0 
        ?
-       <MediaCard quotes={this.state.quotes} characters={this.state.characters}/> 
+       <MediaCard rerenderParentCallback={this.rerenderParentCallback} quotes={this.state.quotes} characters={this.state.characters}/> 
      : null 
      }
 

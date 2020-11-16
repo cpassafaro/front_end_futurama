@@ -60,8 +60,10 @@ export default function MediaCard(props) {
       let quoteList=[]
       quoteList.push(props.quotes.data)
       console.log(quoteList)
-      const quote = quoteList.filter(props.quotes.data.name);
-      console.log(quoteList)
+      if (quoteList.map.character === props.characters.name) {
+        console.log(quoteList.quote)
+//        console.log(quote)
+      }
     }
     
     

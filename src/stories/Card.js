@@ -116,7 +116,9 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary">
                       Show Quote
                     </Button>
-                    <div className="quote">{card.quote}</div>
+                    <div className="quote">
+                    <p>{card.quote}</p>
+                    </div>
                   </CardActions>
                 </Card>
               </div>

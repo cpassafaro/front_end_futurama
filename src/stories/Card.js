@@ -56,20 +56,15 @@ export default function MediaCard(props) {
             })
   }
 
-  // function pullQuotes(quote) {
-  //   fetch ("https://futurama-project.herokuapp.com/quotes") {
-  //   console.log(quote)
-  //     }
-  // //   })
-  // //     .then((res) => res.text())
-  // //     .then((res) => console.log(res));
-  // // }
-function pullQuotes(quote) {
-  fetch("https://futurama-project.herokuapp.com/quotes") 
-    console.log(quote)
-  
-}
-
+    function getQuotes(props) {
+      let quoteList=[]
+      quoteList.push(props.quotes.data)
+      console.log(quoteList)
+      const quote = quoteList.filter(props.quotes.data.name);
+      console.log(quoteList)
+    }
+    
+    
   return (
     <div className="teo">
       <div className="hi">{console.log(props.characters.data)}</div>
@@ -120,7 +115,7 @@ function pullQuotes(quote) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card.name)}>
                       Delete Character
                     </Button>
-                    <Button size="small" color="primary" onClick="pullQuotes()">
+                    <Button size="small" color="primary" onClick={getQuotes(props)}>
                       Show Quote
                     </Button>
                   </CardActions>

@@ -115,7 +115,10 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card.name)}>
                       Delete Character
                     </Button>
+
                     <Button size="small" color="primary" onClick={getQuotes(props)}>
+
+
                       Show Quote
                     </Button>
                   </CardActions>

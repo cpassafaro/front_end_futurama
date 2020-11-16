@@ -60,11 +60,13 @@ export default function MediaCard(props) {
       let quoteList=[]
       quoteList.push(props.quotes.data)
       console.log(quoteList)
-      if (quoteList.map.character === props.characters.name) {
-        console.log(quoteList.quote)
+      quoteList.map((item) => {
+        if(item.character === "Bender") {
+        console.log('success')
 //        console.log(quote)
-      }
+      })
     }
+  }
     
     
   return (

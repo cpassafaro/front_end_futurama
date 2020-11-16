@@ -51,12 +51,13 @@ export default function MediaCard(props) {
     setNewPlanet(e.target.value);
   }
 
-  function deleteButton(name) {
-    console.log(name)
+  function deleteButton(id) {
+    console.log(id)
     // alert(`Are you sure you want to delete ${name}`)
-        axios.delete(`https://futurama-project.herokuapp.com/characters/delete/${name}`)
+        axios.delete(`https://futurama-project.herokuapp.com/characters/delete/${id}`)
             .then((res) => {
-                console.log(res)
+                console.log(res);
+                window.location.reload(false);
             })
   }
 
@@ -65,12 +66,15 @@ export default function MediaCard(props) {
       quoteList.push(props.quotes.data)
       console.log(quoteList)
       quoteList.map((item) => {
-        if(item.character === "Bender") {
+        if(item.character == "Bender") {
         console.log('success')
 //        console.log(quote)
-      })
+        }else{
+          console.log('failed')
+        }
+    })
     }
-  }
+  
     
     
   return (
@@ -120,11 +124,11 @@ export default function MediaCard(props) {
                     >
                       Edit Planet
                     </Button>
-                    <Button size="small" color="primary" onClick={() => deleteButton(card.name)}>
+                    <Button size="small" color="primary" onClick={() => deleteButton(card._id)}>
                       Delete Character
                     </Button>
 
-                    <Button size="small" color="primary" onClick={getQuotes(props)}>
+                    <Button size="small" color="primary" onClick={() => getQuotes(props)}>
 
 
                       Show Quote

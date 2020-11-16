@@ -36,7 +36,7 @@ export default class CreateCharacter extends Component {
       .then((res) => {
         console.log(res);
         alert("success");
-
+        window.location.reload(false);
         this.setState({
           name: '',
           age: '',

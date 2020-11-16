@@ -63,8 +63,11 @@ export default function MediaCard(props) {
     function getQuotes(props) {
       let quoteList=[]
       quoteList.push(props.quotes.data)
-      const quote = quoteList.filter(props.quotes.data.name);
       console.log(quoteList)
+      if (quoteList.map.character === props.characters.name) {
+        console.log(quoteList.quote)
+//        console.log(quote)
+      }
     }
     
     
@@ -118,10 +121,16 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card.name)}>
                       Delete Character
                     </Button>
-                    <Button size="small" color="primary">
+
+                    <Button size="small" color="primary" onClick={getQuotes(props)}>
+
+
                       Show Quote
                     </Button>
                   </CardActions>
+                  <div>
+                  <p>{console.log(card)}</p>
+                  </div>
                 </Card>
               </div>
             ))

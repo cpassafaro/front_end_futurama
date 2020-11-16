@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -68,9 +68,9 @@ export default function MediaCard(props) {
       <div className="hi">{console.log(props.characters.data)}</div>
       <Grid
         container
-        display="grid"
+        display="flexbox"
         direction="row"
-        justify="space-between"
+        justify="space-around"
         alignItems="flex-start"
       >
         {props.length !== 0

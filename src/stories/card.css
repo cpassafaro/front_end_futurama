@@ -10,7 +10,17 @@
     padding: 0.5em;
    
   } */
-  img.scaled {
+  /* img.scaled {
     width: 100%;
+  } */
+
+
+  .hi {
+    /* border: 1px solid red; */
+    margin-top: 25px;
+    /* box-shadow: 10px 10px 10px #EACC4C; */
+    box-shadow: 0 0px 0px 0, 0 3px 31px 0 #00FF7B;
   }
+
+
 

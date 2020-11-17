@@ -25,7 +25,10 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  console.log(props.characters.data)
+
+   console.log(props)
+
+
 
   const [newPlanet, setNewPlanet] = useState("");
 

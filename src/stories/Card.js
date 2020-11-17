@@ -24,12 +24,12 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  // console.log(props.characters.data)
+   console.log(props)
 
   const [newPlanet, setNewPlanet] = useState("");
 
   function handleEdit(nameText) {
-    console.log(newPlanet);
+  //  console.log(newPlanet);
     fetch("https://futurama-project.herokuapp.com/characters/planet/" + nameText, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -57,29 +57,24 @@ export default function MediaCard(props) {
             })
   }
 
-<<<<<<< HEAD
-//     function getQuotes(props) {
-//       let quoteList=[]
-//       quoteList.push(props.quotes.data)
-// //      console.log(quoteList)
-//     }
-=======
+
     function getQuotes(props) {
       let quoteList=[]
       quoteList.push(props.quotes.data)
-      console.log(quoteList)
+      //console.log(quoteList)
       quoteList.map((item) => {
         if(item.character == "Bender") {
         console.log('success')
-//        console.log(quote)
+        //console.log(quoteList)
         }else{
-          console.log('failed')
+          //console.log('failed')
         }
     })
     }
-  
->>>>>>> d8dabbc0c3d76f83479cd0c094f3c787653f170f
-    
+  //character in characters array
+   //character in quotes array
+   //use filter
+   //combine and push into new array 
     
   return (
     <div className="teo">
@@ -131,14 +126,10 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card._id)}>
                       Delete Character
                     </Button>
-<<<<<<< HEAD
-                    <Button size="small" color="primary">
-=======
 
                     <Button size="small" color="primary" onClick={() => getQuotes(props)}>
 
 
->>>>>>> d8dabbc0c3d76f83479cd0c094f3c787653f170f
                       Show Quote
                     </Button>
                     <div className="quote">

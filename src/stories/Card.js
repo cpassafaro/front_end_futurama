@@ -11,9 +11,10 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import { Route, Link, Redirect } from "react-router-dom";
-
+import Info from "../Components/Info"
 import "./card.css";
 import { CommunicationPhonelinkSetup } from "material-ui/svg-icons";
+import noEncryption from "material-ui/svg-icons/notification/no-encryption";
 
 const useStyles = makeStyles({
   root: {
@@ -26,13 +27,15 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-
+  let divStyle = {display:`${props.display}`}
    //console.log(props)
-  console.log(props.quotes.data)
+  //console.log(props.quotes.data)
 
 
   const [newPlanet, setNewPlanet] = useState("");
+  
 
+  
   function handleEdit(nameText) {
   //  console.log(newPlanet);
     fetch("https://futurama-project.herokuapp.com/characters/planet/" + nameText, {
@@ -66,11 +69,13 @@ export default function MediaCard(props) {
     function getQuotes(name) {
        let quoteList=props.quotes.data.filter(word => 
          name.includes("head") )
+        let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
         
-
+        console.log(future)
     //   quoteList.push(props.quotes.data)
-       console.log(quoteList)
+//console.log(quoteList)
        console.log(name)
+      
     //   quoteList.map((item) => {
     //     if(item.character == "Bender") {
     //     console.log('success')
@@ -79,15 +84,13 @@ export default function MediaCard(props) {
     //       //console.log('failed')
     //     }
     // })
-      return <p>
-        {name}
-      </p>
+      return future
     }
   //character in characters array
    //character in quotes array
    //use filter
    //combine and push into new array 
-    
+   
   return (
     <div className="teo">
       <div className="hi"></div>
@@ -140,15 +143,16 @@ export default function MediaCard(props) {
                       Delete Character
                     </Button>
 
-                    <Button size="small" color="primary" onClick={() => getQuotes(props)}>
+                    <Button size="small" color="primary" onClick={() => props.showQuote()}>
 
 
                       Show Quote
                     </Button>
-                    <div className="quote">
-                    <p>{getQuotes(card.name)}</p>
-                    </div>
+                    
                   </CardActions>
+                  <div style={divStyle} className="quote">
+                    {getQuotes(card.name)}
+                    </div>
                 </Card>
               </div>
             ))

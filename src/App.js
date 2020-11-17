@@ -15,7 +15,8 @@ class App extends Component{
     this.state = {
       characters:"",
       isLoading:true,
-      quotes: ''
+      quotes: '',
+      display: "none"
     }
   }
   componentDidMount(){
@@ -64,6 +65,7 @@ rerenderParentCallback(){
       })
 }
 
+
   render(){
     //console.log(this.state.characters)
      console.log(this.state.quotes)
@@ -91,7 +93,7 @@ rerenderParentCallback(){
      {
        this.state.characters.length !==0 
        ?
-       <MediaCard rerenderParentCallback={this.rerenderParentCallback} quotes={this.state.quotes} characters={this.state.characters}/> 
+       <MediaCard rerenderParentCallback={this.rerenderParentCallback} quotes={this.state.quotes} characters={this.state.characters} showQuote={this.showQuote} display={this.state.display}/> 
      : null 
      }
 

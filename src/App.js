@@ -77,11 +77,13 @@ rerenderParentCallback(){
     
     <div>
       <nav>
-        {/* <Link to="/create"></Link> */}
+        <Link to="/create"></Link>
       </nav>
       <main>
         <Header/>
-        <CreateCharacters data={this.state.characters}/>
+        <Route path='/create' render={(routerProps) => {
+          return <CreateCharacters {...routerProps} data={this.state.characters} rerenderParentCallback={this.rerenderParentCallback}/>
+        }}/>
      </main>
 
      <div> 

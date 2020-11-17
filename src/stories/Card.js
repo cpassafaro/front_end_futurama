@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import { Route, Link, Redirect } from "react-router-dom";
 
 import "./card.css";
 
@@ -24,7 +25,10 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+
    console.log(props)
+
+
 
   const [newPlanet, setNewPlanet] = useState("");
 
@@ -52,8 +56,8 @@ export default function MediaCard(props) {
     // alert(`Are you sure you want to delete ${name}`)
         axios.delete(`https://futurama-project.herokuapp.com/characters/delete/${id}`)
             .then((res) => {
-                console.log(res);
-                window.location.reload(false);
+              console.log(res);
+              props.rerenderParentCallback()
             })
   }
 

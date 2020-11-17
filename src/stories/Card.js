@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  let divStyle = {display:`${props.display}`}
+  
    //console.log(props)
   //console.log(props.quotes.data)
 
@@ -69,7 +69,8 @@ export default function MediaCard(props) {
     function getQuotes(name) {
        let quoteList=props.quotes.data.filter(word => 
          name.includes("head") )
-        let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
+        let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <Info {...item}></Info>} })
+        //let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
         
         console.log(future)
     //   quoteList.push(props.quotes.data)
@@ -143,14 +144,10 @@ export default function MediaCard(props) {
                       Delete Character
                     </Button>
 
-                    <Button size="small" color="primary" onClick={() => props.showQuote()}>
 
-
-                      Show Quote
-                    </Button>
                     
                   </CardActions>
-                  <div style={divStyle} className="quote">
+                  <div className="quote">
                     {getQuotes(card.name)}
                     </div>
                 </Card>

@@ -19,19 +19,21 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 340,
-    backgroundSize: "contain",
+    height: 140,
   },
 });
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  console.log(props.characters.data)
+
+   console.log(props)
+
+
 
   const [newPlanet, setNewPlanet] = useState("");
 
   function handleEdit(nameText) {
-    console.log(newPlanet);
+  //  console.log(newPlanet);
     fetch("https://futurama-project.herokuapp.com/characters/planet/" + nameText, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -40,10 +42,7 @@ export default function MediaCard(props) {
       }),
     })
       .then((res) => res.text())
-      .then((res) => {
-        console.log(res)
-        props.rerenderParentCallback()
-      });
+      .then((res) => console.log(res));
       
   }
 
@@ -62,21 +61,24 @@ export default function MediaCard(props) {
             })
   }
 
+
     function getQuotes(props) {
       let quoteList=[]
       quoteList.push(props.quotes.data)
-      console.log(quoteList)
+      //console.log(quoteList)
       quoteList.map((item) => {
         if(item.character == "Bender") {
         console.log('success')
-//        console.log(quote)
+        //console.log(quoteList)
         }else{
-          console.log('failed')
+          //console.log('failed')
         }
     })
     }
-  
-    
+  //character in characters array
+   //character in quotes array
+   //use filter
+   //combine and push into new array 
     
   return (
     <div className="teo">
@@ -134,10 +136,10 @@ export default function MediaCard(props) {
 
                       Show Quote
                     </Button>
+                    <div className="quote">
+                    <p>{card.quote}</p>
+                    </div>
                   </CardActions>
-                  <div>
-                  <p>{console.log(card)}</p>
-                  </div>
                 </Card>
               </div>
             ))

@@ -13,6 +13,7 @@ import TextField from "@material-ui/core/TextField";
 import { Route, Link, Redirect } from "react-router-dom";
 
 import "./card.css";
+import { CommunicationPhonelinkSetup } from "material-ui/svg-icons";
 
 const useStyles = makeStyles({
   root: {
@@ -26,8 +27,8 @@ const useStyles = makeStyles({
 export default function MediaCard(props) {
   const classes = useStyles();
 
-   console.log(props)
-
+   //console.log(props)
+  console.log(props.quotes.data)
 
 
   const [newPlanet, setNewPlanet] = useState("");
@@ -52,7 +53,7 @@ export default function MediaCard(props) {
   }
 
   function deleteButton(id) {
-    console.log(id)
+    //console.log(id)
     // alert(`Are you sure you want to delete ${name}`)
         axios.delete(`https://futurama-project.herokuapp.com/characters/delete/${id}`)
             .then((res) => {
@@ -62,18 +63,25 @@ export default function MediaCard(props) {
   }
 
 
-    function getQuotes(props) {
-      let quoteList=[]
-      quoteList.push(props.quotes.data)
-      //console.log(quoteList)
-      quoteList.map((item) => {
-        if(item.character == "Bender") {
-        console.log('success')
-        //console.log(quoteList)
-        }else{
-          //console.log('failed')
-        }
-    })
+    function getQuotes(name) {
+       let quoteList=props.quotes.data.filter(word => 
+         name.includes("head") )
+        
+
+    //   quoteList.push(props.quotes.data)
+       console.log(quoteList)
+       console.log(name)
+    //   quoteList.map((item) => {
+    //     if(item.character == "Bender") {
+    //     console.log('success')
+    //     //console.log(quoteList)
+    //     }else{
+    //       //console.log('failed')
+    //     }
+    // })
+      return <p>
+        {name}
+      </p>
     }
   //character in characters array
    //character in quotes array
@@ -82,7 +90,8 @@ export default function MediaCard(props) {
     
   return (
     <div className="teo">
-      <div className="hi">{console.log(props.characters.data)}</div>
+      <div className="hi"></div>
+      {/* //{console.log(props.characters.data)} */}
       <Grid
         container
         display="flexbox"
@@ -94,7 +103,7 @@ export default function MediaCard(props) {
           ? props.characters.data.map((card) => (
               <div className="hi">
                 <Card>
-                  {console.log(card.picUrl)}
+                  {/* {console.log(card.picUrl)} */}
                   <CardActionArea>
                     <CardMedia
                       className={classes.media}
@@ -137,7 +146,7 @@ export default function MediaCard(props) {
                       Show Quote
                     </Button>
                     <div className="quote">
-                    <p>{card.quote}</p>
+                    <p>{getQuotes(card.name)}</p>
                     </div>
                   </CardActions>
                 </Card>

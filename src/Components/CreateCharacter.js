@@ -36,7 +36,8 @@ export default class CreateCharacter extends Component {
       .then((res) => {
         console.log(res);
         alert("success");
-        window.location.reload(false);
+        this.props.history.push("/")
+        this.props.rerenderParentCallback()
         this.setState({
           name: '',
           age: '',

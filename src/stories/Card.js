@@ -71,19 +71,25 @@ export default function MediaCard(props) {
 
 
     function getQuotes(name) {
-      console.log(name)
-      console.log(props.quotes.data)
+      // console.log(name)
+      // console.log(props.quotes.data)
       //  let quoteList=props.quotes.data.filter(word => 
       //    name.includes("head") )
-        let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <Info {...item}></Info>} })
+        if (props.quotes.data !== undefined ){
+          let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <Info {...item}></Info>} }
+          
+          )
+          return future
+        } 
+        
         //let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
         
-        console.log(future)
+        //console.log(future)
     
       //  console.log(name)
       
 
-      return future
+    //  return future
     }
 
   function showQuote (id) {
@@ -152,7 +158,7 @@ export default function MediaCard(props) {
                     </Button>       
                   </CardActions>
                   <div className="quote" id={index} style={{display:"none"}}>
-                    {/* {getQuotes(card.name)} */}
+                    {getQuotes(card.name)}
                     </div>
                 </Card>
               </div>

@@ -50,5 +50,10 @@
 		opacity: 1;
 	}
 }
+#images {
+  background-size: contain;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
 
 

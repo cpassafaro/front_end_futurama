@@ -73,25 +73,24 @@ export default function MediaCard(props) {
         //let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
         
         console.log(future)
-    //   quoteList.push(props.quotes.data)
-//console.log(quoteList)
+    
        console.log(name)
       
-    //   quoteList.map((item) => {
-    //     if(item.character == "Bender") {
-    //     console.log('success')
-    //     //console.log(quoteList)
-    //     }else{
-    //       //console.log('failed')
-    //     }
-    // })
+
       return future
     }
-  //character in characters array
-   //character in quotes array
-   //use filter
-   //combine and push into new array 
-   
+
+  function showQuote (id) {
+    console.log(id) 
+    let selectedID = document.getElementById(id)
+    console.log(selectedID.style.display)
+    if (selectedID.style.display == "none"){
+      selectedID.style.display = "block"
+    } else {
+      selectedID.style.display = "none"
+    }
+  }
+
   return (
     <div className="teo">
       <div className="hi"></div>
@@ -104,7 +103,7 @@ export default function MediaCard(props) {
         alignItems="flex-start"
       >
         {props.length !== 0
-          ? props.characters.data.map((card) => (
+          ? props.characters.data.map((card, index) => (
               <div className="hi">
                 <Card>
                   {/* {console.log(card.picUrl)} */}
@@ -130,7 +129,6 @@ export default function MediaCard(props) {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-
                   <CardActions>
                     <TextField placeholder={card.planet} onChange={handleChange} />
                     <Button
@@ -143,11 +141,11 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card._id)}>
                       Delete Character
                     </Button>
-
-
-                    
+                    <Button size="small" color="primary" onClick={() => showQuote(index)}>
+                      Show Quotes
+                    </Button>       
                   </CardActions>
-                  <div className="quote">
+                  <div className="quote" id={index} style={{display:"none"}}>
                     {getQuotes(card.name)}
                     </div>
                 </Card>
@@ -158,4 +156,3 @@ export default function MediaCard(props) {
     </div>
   );
 }
-//testy testy testy

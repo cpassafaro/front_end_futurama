@@ -15,7 +15,8 @@ class App extends Component{
     this.state = {
       characters:"",
       isLoading:true,
-      quotes: ''
+      quotes: '',
+      
     }
   }
   componentDidMount(){
@@ -60,13 +61,14 @@ rerenderParentCallback(){
         return res
       })
       .then((quotesData) => {
-        this.setState({quotes: quotesData, isLoading:false})
+        this.setState({quotes: quotesData.data, isLoading:false})
       })
 }
 
+
   render(){
-    console.log(this.state.characters)
-    // console.log(this.state.quotes)
+    //console.log(this.state.characters)
+     console.log(this.state.quotes)
     //put if else statement here to see if components are still loading
     //use the one from front-end api project
     if(this.state.isLoading == true){
@@ -91,18 +93,11 @@ rerenderParentCallback(){
      {
        this.state.characters.length !==0 
        ?
-       <MediaCard rerenderParentCallback={this.rerenderParentCallback} quotes={this.state.quotes} characters={this.state.characters}/> 
+       <MediaCard rerenderParentCallback={this.rerenderParentCallback} quotes={this.state.quotes} characters={this.state.characters} showQuote={this.showQuote}/> 
      : null 
      }
 
      </div>
-
-
-
-
-
-
-
     </div>
     
 

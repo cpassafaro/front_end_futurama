@@ -11,8 +11,10 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import { Route, Link, Redirect } from "react-router-dom";
-
+import Info from "../Components/Info"
 import "./card.css";
+import { CommunicationPhonelinkSetup } from "material-ui/svg-icons";
+import noEncryption from "material-ui/svg-icons/notification/no-encryption";
 
 const useStyles = makeStyles({
   root: {
@@ -25,13 +27,15 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-
-   console.log(props)
-
+  
+   //console.log(props)
+  //console.log(props.quotes.data)
 
 
   const [newPlanet, setNewPlanet] = useState("");
+  
 
+  
   function handleEdit(nameText) {
   //  console.log(newPlanet);
     fetch("https://futurama-project.herokuapp.com/characters/planet/" + nameText, {
@@ -52,7 +56,7 @@ export default function MediaCard(props) {
   }
 
   function deleteButton(id) {
-    console.log(id)
+    //console.log(id)
     // alert(`Are you sure you want to delete ${name}`)
         axios.delete(`https://futurama-project.herokuapp.com/characters/delete/${id}`)
             .then((res) => {
@@ -62,27 +66,35 @@ export default function MediaCard(props) {
   }
 
 
-    function getQuotes(props) {
-      let quoteList=[]
-      quoteList.push(props.quotes.data)
-      //console.log(quoteList)
-      quoteList.map((item) => {
-        if(item.character == "Bender") {
-        console.log('success')
-        //console.log(quoteList)
-        }else{
-          //console.log('failed')
-        }
-    })
-    }
-  //character in characters array
-   //character in quotes array
-   //use filter
-   //combine and push into new array 
+    function getQuotes(name) {
+       let quoteList=props.quotes.data.filter(word => 
+         name.includes("head") )
+        let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <Info {...item}></Info>} })
+        //let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
+        
+        console.log(future)
     
+       console.log(name)
+      
+
+      return future
+    }
+
+  function showQuote (id) {
+    console.log(id) 
+    let selectedID = document.getElementById(id)
+    console.log(selectedID.style.display)
+    if (selectedID.style.display == "none"){
+      selectedID.style.display = "block"
+    } else {
+      selectedID.style.display = "none"
+    }
+  }
+
   return (
     <div className="teo">
-      <div className="hi">{console.log(props.characters.data)}</div>
+      <div className="hi"></div>
+      {/* //{console.log(props.characters.data)} */}
       <Grid
         container
         display="flexbox"
@@ -91,10 +103,10 @@ export default function MediaCard(props) {
         alignItems="flex-start"
       >
         {props.length !== 0
-          ? props.characters.data.map((card) => (
+          ? props.characters.data.map((card, index) => (
               <div className="hi">
                 <Card>
-                  {console.log(card.picUrl)}
+                  {/* {console.log(card.picUrl)} */}
                   <CardActionArea>
                     <CardMedia
                       className={classes.media}
@@ -117,7 +129,6 @@ export default function MediaCard(props) {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-
                   <CardActions>
                     <TextField placeholder={card.planet} onChange={handleChange} />
                     <Button
@@ -130,16 +141,13 @@ export default function MediaCard(props) {
                     <Button size="small" color="primary" onClick={() => deleteButton(card._id)}>
                       Delete Character
                     </Button>
-
-                    <Button size="small" color="primary" onClick={() => getQuotes(props)}>
-
-
-                      Show Quote
-                    </Button>
-                    <div className="quote">
-                    <p>{card.quote}</p>
-                    </div>
+                    <Button size="small" color="primary" onClick={() => showQuote(index)}>
+                      Show Quotes
+                    </Button>       
                   </CardActions>
+                  <div className="quote" id={index} style={{display:"none"}}>
+                    {getQuotes(card.name)}
+                    </div>
                 </Card>
               </div>
             ))
@@ -148,4 +156,3 @@ export default function MediaCard(props) {
     </div>
   );
 }
-//testy testy testy

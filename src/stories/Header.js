@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Link, Redirect } from "react-router-dom";
 import { Button } from './Button';
 import './header.css';
+import StoryRouter from 'storybook-react-router';
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>

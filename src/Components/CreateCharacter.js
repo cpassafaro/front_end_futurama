@@ -25,7 +25,7 @@ export default class CreateCharacter extends Component {
       name: this.state.name,
       age: this.state.name,
       planet: this.state.planet,
-      image: this.state.image,
+      picUrl: this.state.image,
       species: this.state.species,
       status: this.state.status,
       profession: this.state.profession,

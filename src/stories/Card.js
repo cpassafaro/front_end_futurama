@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 export default function MediaCard(props) {
   const classes = useStyles();
   
-   //console.log(props)
+  //  console.log(props)
   //console.log(props.quotes.data)
 
 
@@ -38,7 +38,7 @@ export default function MediaCard(props) {
 
   
   function handleEdit(nameText) {
-  //  console.log(newPlanet);
+  //  console.log("handle edit" , nameText);
     fetch("https://futurama-project.herokuapp.com/characters/planet/" + nameText, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -46,9 +46,12 @@ export default function MediaCard(props) {
         planet: newPlanet,
       }),
     })
-      .then((res) => res.text())
-      .then((res) => console.log(res));
-      
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        props.rerenderParentCallback()
+      })
+     
   }
 
 

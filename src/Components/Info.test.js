@@ -1,9 +1,10 @@
 import { configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-configure({ adapter: new Adapter() })
 import React from 'react'
 import { shallow } from 'enzyme'
 import Info from './Info'
+
+configure({ adapter: new Adapter() })
 // We will describe a block of tests
 describe('Base component', () => {
 	// we will write one individual test

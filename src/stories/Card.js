@@ -108,7 +108,7 @@ export default function MediaCard(props) {
                 <Card>
                   {/* {console.log(card.picUrl)} */}
                   <CardActionArea>
-                    <CardMedia
+                    <CardMedia id="images"
                       className={classes.media}
                       image={card.picUrl}
                       title="Character"

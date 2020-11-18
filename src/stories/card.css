@@ -49,5 +49,9 @@
 		opacity: 1;
 	}
 }
+#images {
+  background-size: contain;
+  margin-bottom: 15px;
+}
 
 

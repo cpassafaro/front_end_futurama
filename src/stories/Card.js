@@ -68,6 +68,7 @@ export default function MediaCard(props) {
 
 
     function getQuotes(name) {
+      console.log(props.quotes.data)
        let quoteList=props.quotes.data.filter(word => 
          name.includes("head") )
         let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <Info {...item}></Info>} })

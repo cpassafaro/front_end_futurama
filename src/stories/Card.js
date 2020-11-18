@@ -29,13 +29,13 @@ const useStyles = makeStyles({
 export default function MediaCard(props) {
   const classes = useStyles();
   
-  //  console.log(props)
-  //console.log(props.quotes.data)
+   console.log(props.characters.data)
+  console.log(props.quotes.data)
 
 
   const [newPlanet, setNewPlanet] = useState("");
   
-
+  
   
   function handleEdit(nameText) {
   //  console.log("handle edit" , nameText);
@@ -71,30 +71,18 @@ export default function MediaCard(props) {
 
 
     function getQuotes(name) {
-      // console.log(name)
-      // console.log(props.quotes.data)
-      //  let quoteList=props.quotes.data.filter(word => 
-      //    name.includes("head") )
         if (props.quotes.data !== undefined ){
           let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <Info {...item}></Info>} }
           
           )
           return future
         } 
-        
-        //let future = props.quotes.data.map(item => { if (name.includes(item.character)){return <p>{item.quote}</p>} })
-        
-        //console.log(future)
-    
-      //  console.log(name)
-      
-
-    //  return future
     }
 
   function showQuote (id) {
     console.log(id) 
     let selectedID = document.getElementById(id)
+    console.log(selectedID)
     console.log(selectedID.style.display)
     if (selectedID.style.display == "none"){
       selectedID.style.display = "block"
@@ -106,7 +94,6 @@ export default function MediaCard(props) {
   return (
     <div className="teo">
       <div className="hi"></div>
-      {/* //{console.log(props.characters.data)} */}
       <Grid
         container
         display="flexbox"
@@ -118,7 +105,6 @@ export default function MediaCard(props) {
           ? props.characters.data.map((card, index) => (
               <div className="hi">
                 <Card>
-                  {/* {console.log(card.picUrl)} */}
                   <CardActionArea>
                     <CardMedia id="images"
                       className={classes.media}

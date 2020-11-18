@@ -7,7 +7,7 @@ export default class info extends Component {
     render() {
         
         return (
-            <div>
+            <div className="quote">
              {this.props.quote}   
             </div>
             

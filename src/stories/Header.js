@@ -28,11 +28,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
       <div>
         <Link to="/create">
           <Button className = "button" size="small" onClick={onLogout} label="Add a Character" />
-        </Link>
-        
-
-
-        
+        </Link> 
       </div>
     </div>
   </header>

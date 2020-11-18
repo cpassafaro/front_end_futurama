@@ -1,6 +1,7 @@
 import React from 'react';
-
+import StoryRouter from 'storybook-react-router';
 import { Header } from './Header';
+// addDecorator(StoryRouter())
 
 export default {
   title: 'Example/Header',
